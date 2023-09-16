@@ -1,14 +1,14 @@
 # High Performance Computing 2023
-Lecture slides, codes and material for the 6-credit course on High Performance Computing.
+Lecture slides, codes and materials for the 6-credit course on High Performance Computing.
 
 
-Teachers:
+#### Teachers 
 
 **Stefano Cozzini**, Area Science Park, Trieste
 
 **Luca Tornatore**, INAF - National Institute for Astrophysics, Astronomical Observatory of Trieste
 
-Tutor:
+#### Tutor:
 
 **Marco Celoria** Area Science Park 
 
@@ -24,8 +24,18 @@ Computational resource to be used: ORFEO cluster see https://orfeo-doc.areascien
   - decent knwoledge of a programming language ( C and/or C++ but even Fortran is fine)
   - decent knowledge of scripting language  ( python is fine but bash awk perl are also welcome}
 
-
 #### CALENDAR
+
+We plan to provide 30 hours frontal lecture, 16 hours of lab/tutorials and a few more hours as seminars.
+Here below the schedule for lectures and tutorials. 
+Seminar will be announced during lecture and they will be  generally on wednesday from 1 to 2mp
+
+Lecture rooms:
+
+
+The course should be completed by end of november.
+First weeek of January is spare time if something has beeen left behind.
+
 
 | DATE         | LECTURE                                     | TUTORIALS                                                           |
 | :----------  | :---------------------------------------------| :---------------------------------------------                      |
