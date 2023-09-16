@@ -47,22 +47,22 @@ First weeek of January is spare time if something has beeen left behind.
 | Fri, Oct 06  |                              |  [2] [Tutorial 2: exploring ORFEO](Intro/README.md)     |
 | Tue, Oct 10  |  [4] [Parallel programming ]         |                                     |              
 | Thu, Oct 12  |  [5] [Parallel programming and MPI |                                     |
-| Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI]    |
+| Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI 01 ]    |
 | Tue, Oct 17  |  [6] [MPI programming 02         |                                     |     
-| Thu, Oct 19  |  [7] [Networks for HPC ) |                                     |
-| Fri, Oct 20  |                              |  [4] [Tutorial 4: MPI     |
-| Tue, Oct 24  |  [8] [ Serial Optimization 01       |                                     |              
-| Thu, Oct 26  |  [9] [ Serial Optimization 02                                    |
+| Thu, Oct 19  |  [7] [Networks for HPC and MPI implementations |                                     |
+| Fri, Oct 20  |                              |  [4] [Tutorial 4: MPI 02    |
+| Tue, Oct 24  |  [8] [ basic on Serial Optimization 01       |                                     |              
+| Thu, Oct 26  |  [9] [ basic no Serial Optimization 02                                    |
 | Fri, Oct 27  |                              |  [5] [Tutorial 5: serial optimization     |
-| Tue, Oct 31  |  [10] [Tools for profiling ](Intro/README.md)         |                                     | 
-| Tue, Nov 07  |  [11] [Tools for benchmarking ](Intro/README.md)         |                                     | 
+| Tue, Oct 31  |  [10] [Tools  ](Intro/README.md)         |                                     | 
+| Tue, Nov 07  |  [11] [HPC Librarieas ](Intro/README.md)         |                                     | 
 | Thu, Nov 09  |  [12] |      
 | Fri, Nov 10  |                              | [6] [Tutorial 6:  |
 | Fri, Nov 10  |                              | [7] [Tutorial 7:     |
-| Tue, Nov 14  |  [13] [Parallel programming ](Intro/README.md)         |                                     |    
-| Tue, Nov 21  |  [14] [Parallel programming ](Intro/README.md)         |                                     |
+| Tue, Nov 14  |  [13] [Storage for HPC  ](Intro/README.md)         |                                     |    
+| Tue, Nov 21  |  [14] [benchmarking  ](Intro/README.md)         |                                     |
 | Thu, Nov 23  |  [15] [Lecture 15] |  
-| Tue, Nov 28  |  [16] [Lecture 16]        |                                     |
+| Tue, Nov 28  |        |         [8] [Tutorial 8:                             |
 
 #### REFERENCES & BOOKS
 
