@@ -39,30 +39,30 @@ First weeek of January is spare time if something has beeen left behind.
 
 | DATE         | LECTURE                                     | TUTORIALS                                                           |
 | :----------  | :---------------------------------------------| :---------------------------------------------                      |
-| Wed, Sep 27  | [0] [Introduction to the course] |           |
-| Thu, Sep 28  | [1] [Introduction to HPC](Intro/README.md)                 |          | 
+| Wed, Sep 27  | [0] [Introduction to the course] (S.C. + L.T. + G.T) |           |
+| Thu, Sep 28  | [1] [Introduction to HPC] (S.C.)|          | 
 | Fri, Sep 29  |                  |   [1] [Tutorial 1: using the linux command line/ connecting to ORFEO](Intro/readme.md)  |
-| Tue, Oct 03  |  [2] [HPC Hardware](Intro/README.md)         |                                     |                      
-| Thu, Oct 05  |  [3] [HPC software stack and tools](Intro/README.md) |                                     |
+| Tue, Oct 03  |  [2] [HPC Hardware and Software] (S.C.)       |                                     |                      
+| Thu, Oct 05  |  [3] [Parallel Programming concepts] (S.C.) |                                     |
 | Fri, Oct 06  |                              |  [2] [Tutorial 2: exploring ORFEO](Intro/README.md)     |
-| Tue, Oct 10  |  [4] [Parallel programming ]         |                                     |              
-| Thu, Oct 12  |  [5] [Parallel programming and MPI |                                     |
-| Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI 01 ]    |
-| Tue, Oct 17  |  [6] [MPI programming 02         |                                     |     
-| Thu, Oct 19  |  [7] [Networks for HPC and MPI implementations |                                     |
-| Fri, Oct 20  |                              |  [4] [Tutorial 4: MPI 02    |
-| Tue, Oct 24  |  [8] [ basic on Serial Optimization 01       |                                     |              
-| Thu, Oct 26  |  [9] [ basic no Serial Optimization 02                                    |
+| Tue, Oct 10  |  [4] [Introduction to MPI / 1] (S.C.)|                                     |              
+| Thu, Oct 12  |  [5] [Introduction to MPI / 2] (S.C.)|                                     |
+| Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI ]    |
+| Tue, Oct 17  |  [6] [Introduction to OpenMP / 1] (L.T.)  |                                     |     
+| Thu, Oct 19  |  [7] [Introduction to OpenMP / 2] (L.T.) |                                     |
+| Fri, Oct 20  |                              |  [4] [Tutorial 4: OpenMP    |
+| Tue, Oct 24  |  [8] [ Basic on Serial Optimization 01] (L.T.)      |    |              
+| Thu, Oct 26  |  [9] [ Basic no Serial Optimization 02] (L.T.)      |
 | Fri, Oct 27  |                              |  [5] [Tutorial 5: serial optimization     |
-| Tue, Oct 31  |  [10] [Tools  ](Intro/README.md)         |                                     | 
-| Tue, Nov 07  |  [11] [HPC Librarieas ](Intro/README.md)         |                                     | 
-| Thu, Nov 09  |  [12] |      
-| Fri, Nov 10  |                              | [6] [Tutorial 6:  |
-| Fri, Nov 10  |                              | [7] [Tutorial 7:     |
-| Tue, Nov 14  |  [13] [Storage for HPC  ](Intro/README.md)         |                                     |    
-| Tue, Nov 21  |  [14] [benchmarking  ](Intro/README.md)         |                                     |
-| Thu, Nov 23  |  [15] [Lecture 15] |  
-| Tue, Nov 28  |        |         [8] [Tutorial 8:                             |
+| Tue, Oct 31  |  [10] [Tools for HPC ] (S.C.)        |                                     | 
+| Tue, Nov 07  |  [11] [HPC Libraries ] (S.C.)        |                                     | 
+| Thu, Nov 09  |  [12] [Debugging & Profiling] (L.T.) |      
+| Fri, Nov 10  |                              | [6] [Tutorial 6: HPC tools & libraries |
+| Fri, Nov 10  |                              | [7] [Tutorial 7: Debugging & profiling |
+| Tue, Nov 14  |  [13] [Storage for HPC  ] (S.C.)  |                                     |    
+| Tue, Nov 21  |  [14] [Basic on benchmarking  ] (S.C.)        |                                     |
+| Thu, Nov 23  |  [15] [Introduction to GPUs] (S.C.) |  
+| Tue, Nov 28  |        |         [8] [Tutorial 8: Offloading to GPUs   |
 
 #### REFERENCES & BOOKS
 
