@@ -50,19 +50,19 @@ First weeek of January is spare time if something has beeen left behind.
 | Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI ]    |
 | Tue, Oct 17  |  [6] [Introduction to OpenMP / 1] (L.T.)  |                                     |     
 | Thu, Oct 19  |  [7] [Introduction to OpenMP / 2] (L.T.) |                                     |
-| Fri, Oct 20  |                              |  [4] [Tutorial 4: OpenMP    |
-| Tue, Oct 24  |  [8] [ Basic on Serial Optimization 01] (L.T.)      |    |              
-| Thu, Oct 26  |  [9] [ Basic no Serial Optimization 02] (L.T.)      |
-| Fri, Oct 27  |                              |  [5] [Tutorial 5: serial optimization     |
-| Tue, Oct 31  |  [10] [Tools for HPC ] (S.C.)        |                                     | 
-| Tue, Nov 07  |  [11] [HPC Libraries ] (S.C.)        |                                     | 
-| Thu, Nov 09  |  [12] [Debugging & Profiling] (L.T.) |      
-| Fri, Nov 10  |                              | [6] [Tutorial 6: HPC tools & libraries |
-| Fri, Nov 10  |                              | [7] [Tutorial 7: Debugging & profiling |
-| Tue, Nov 14  |  [13] [Storage for HPC  ] (S.C.)  |                                     |    
-| Tue, Nov 21  |  [14] [Basic on benchmarking  ] (S.C.)        |                                     |
-| Thu, Nov 23  |  [15] [Introduction to GPUs] (S.C.) |  
-| Tue, Nov 28  |        |         [8] [Tutorial 8: Offloading to GPUs   |
+| Fri, Oct 20  |                              |  [4] [Tutorial 4: OpenMP]    |
+| Tue, Oct 24  |  [8] [ More on MPI] (S.C.)      |    |              
+| Thu, Oct 26  |  [9] [ More on OpenMP] (L.T.)      |
+| Fri, Oct 27  |                              |  [5] [Tutorial 5: MPI and OpenMP, hybrid     |
+| Tue, Oct 31  |  [10] [Debugging and Profiling ] (L.T.)        |                                     | 
+| Tue, Nov 07  |          | [6] [Tutorial 6: Debugging & profiling]                                    | 
+| Thu, Nov 09  |  [11] [Basic on Serial code Optimization 1] (L.T.) |      
+| Fri, Nov 10  |  [12] [Basic on Serial code Optimization 2] (L.T.)  |  |
+| Fri, Nov 10  |                              | [7] [Tutorial 7: Serial Code Optimization |
+| Tue, Nov 14  |  [13] [Storage for HPC] (S.C.)  |                                     |    
+| Tue, Nov 21  |  [14] [HPC libraries] (S.C.)        |                                     |
+| Thu, Nov 23  |  [15] [Basic on benchmarking] (S.C.) |  
+| Tue, Nov 28  |        |         [8] [Tutorial 8: HPC libs and benchmarking   |
 
 #### REFERENCES & BOOKS
 
