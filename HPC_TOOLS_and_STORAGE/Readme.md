@@ -1,1 +1,1 @@
-# Matewrials on HPC libraries, tools, storage
+# Materials on HPC libraries, tools, storage
