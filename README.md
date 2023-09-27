@@ -40,8 +40,8 @@ First weeek of January is spare time if something has beeen left behind.
 | DATE         | LECTURE                                     | TUTORIALS                                                           |
 | :----------  | :---------------------------------------------| :---------------------------------------------                      |
 | Wed, Sep 27  | [0] [Introduction to the course] (S.C. + L.T. + G.T) |           |
-| Thu, Sep 28  | [1] [Introduction to HPC] (S.C.)|          | 
-| Fri, Sep 29  |                  |   [1] [Tutorial 1: using the linux command line/ connecting to ORFEO](Intro/readme.md)  |
+| Thu, Sep 28  | [1] [Introduction to HPC](PARALLELISM/Readme.md) (S.C.)|          | 
+| Fri, Sep 29  |                  |   [1] [Tutorial 1: using the linux command line/ connecting to ORFEO](PARALLELISM/Readme.md)  |
 | Tue, Oct 03  |  [2] [HPC Hardware and Software] (S.C.)       |                                     |                      
 | Thu, Oct 05  |  [3] [Parallel Programming concepts] (S.C.) |                                     |
 | Fri, Oct 06  |                              |  [2] [Tutorial 2: exploring ORFEO](Intro/README.md)     |
