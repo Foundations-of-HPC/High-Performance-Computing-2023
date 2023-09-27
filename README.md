@@ -14,7 +14,7 @@ Lecture slides, codes and materials for the 6-credit course on High Performance 
 
 Lab session are helped as well by Orfeo team at Area Science Park 
 
-Link to the teams channel:  to come
+[Link to the teams channel](https://teams.microsoft.com/l/team/19%3a-_VM8zxJiRl98nLZqoZZMfVdQWwxGqRn3WX1TDx8G601%40thread.tacv2/conversations?groupId=228c0bf0-2176-493f-97fa-432714c15983&tenantId=a54b3635-128c-460f-b967-6ded8df82e75)
 
 Computational resource to be used: ORFEO cluster see https://orfeo-doc.areasciencepark.it/
 
@@ -24,11 +24,18 @@ Computational resource to be used: ORFEO cluster see https://orfeo-doc.areascien
   - decent knwoledge of a programming language ( C and/or C++ but even Fortran is fine)
   - decent knowledge of scripting language  ( python is fine but bash awk perl are also welcome}
 
+#### Providing public keys : 
+
+[google spreesheet where to insert your data](https://bit.ly/3PAvsUb)
+
+
 #### CALENDAR
 
 We plan to provide 30 hours frontal lecture, 16 hours of lab/tutorials and a few more hours as seminars.
 Here below the schedule for lectures and tutorials. 
 Seminar will be announced during lecture and they will be  generally on wednesday from 1 to 2mp
+
+
 
 Lecture rooms:
 
