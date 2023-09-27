@@ -18,3 +18,8 @@ There is plenty of materials on this on the web. Here a few links to start with:
  - [the www.top500.org: it deserves a visit to check a few things](https://www.top500.org)
  - [Folding@home project: take a look](https://foldingathome.org/?lng=en)
  - [AlphaFold web page](https://alphafold.com/)
+
+### Materials for Linux beginners: 
+
+ - [one simple tutorial to start using ssh](https://www.ssh.com/ssh/command/)
+ - [linux/unix shell short tutorial for novice users](http://swcarpentry.github.io/shell-novice/)
