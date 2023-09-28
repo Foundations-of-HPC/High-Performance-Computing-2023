@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=memory_A         # Job name
+#SBATCH --ntasks=1                  # Run a single task
+#SBATCH --mem=70M                   # Job Memory
+#SBATCH --time=00:15:00             # Time limit hrs:min:sec
+#SBATCH -p THIN
+#SBATCH --output=%x.%j.out
+#SBATCH --error=%x.%j.err
+
+pwd; hostname; date
+cd ../codes
+
+gcc memory.c -o memory.x
+./memory.x 

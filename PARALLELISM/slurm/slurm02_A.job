@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name=my_second_job_A
+#SBATCH --time=0-00:10:00
+#SBATCH -p EPYC
+#SBATCH -n3 # 3 tasks
+#SBATCH --output=%x.%j.out 
+#SBATCH --error=%x.%j.err
+echo Starting job $SLURM_JOB_ID
+echo SLURM assigned me these nodes
+srun -l hostname
+
+echo "1)" $(date)
+srun -l --exclusive -n2 sleep 60  & # start 2 copies of program 1
+echo "2)" $(date)
+srun -l --exclusive -n1 sleep 60  & # start 1 copy of program 2
+echo "3)" $(date)
+wait # wait for all to finish
+
