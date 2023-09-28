@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void mallocator(double ** vec, size_t N)
+void callocator(double ** vec, size_t N)
 {
   *vec=(double *)calloc(N, sizeof(double));
   if (*vec==NULL) fprintf(stderr, "vec is NULL\n");
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
   size_t i, j, m;
   for (i = 1e3 ; i < 1e8 ; i*=10 ) {
     m = sizeof(double) * i ;
-    mallocator(&v, i);
+    callocator(&v, i);
     for (j=0; j<i; j++) {
       v[j] = 1.; 
     }
