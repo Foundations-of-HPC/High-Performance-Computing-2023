@@ -14,7 +14,7 @@ Lecture slides, codes and materials for the 6-credit course on High Performance 
 
 Lab session are helped as well by Orfeo team at Area Science Park 
 
-Link to the teams channel:  to come
+[Link to the teams channel](https://teams.microsoft.com/l/team/19%3a-_VM8zxJiRl98nLZqoZZMfVdQWwxGqRn3WX1TDx8G601%40thread.tacv2/conversations?groupId=228c0bf0-2176-493f-97fa-432714c15983&tenantId=a54b3635-128c-460f-b967-6ded8df82e75)
 
 Computational resource to be used: ORFEO cluster see https://orfeo-doc.areasciencepark.it/
 
@@ -24,11 +24,18 @@ Computational resource to be used: ORFEO cluster see https://orfeo-doc.areascien
   - decent knwoledge of a programming language ( C and/or C++ but even Fortran is fine)
   - decent knowledge of scripting language  ( python is fine but bash awk perl are also welcome}
 
+#### Providing public keys : 
+
+[google spreesheet where to insert your data](https://bit.ly/3PAvsUb)
+
+
 #### CALENDAR
 
 We plan to provide 30 hours frontal lecture, 16 hours of lab/tutorials and a few more hours as seminars.
 Here below the schedule for lectures and tutorials. 
 Seminar will be announced during lecture and they will be  generally on wednesday from 1 to 2mp
+
+
 
 Lecture rooms:
 
@@ -40,8 +47,8 @@ First weeek of January is spare time if something has beeen left behind.
 | DATE         | LECTURE                                     | TUTORIALS                                                           |
 | :----------  | :---------------------------------------------| :---------------------------------------------                      |
 | Wed, Sep 27  | [0] [Introduction to the course] (S.C. + L.T. + G.T) |           |
-| Thu, Sep 28  | [1] [Introduction to HPC] (S.C.)|          | 
-| Fri, Sep 29  |                  |   [1] [Tutorial 1: using the linux command line/ connecting to ORFEO](Intro/readme.md)  |
+| Thu, Sep 28  | [1] [Introduction to HPC](PARALLELISM/Readme.md) (S.C.)|          | 
+| Fri, Sep 29  |                  |   [1] [Tutorial 1: using the linux command line/ connecting to ORFEO](PARALLELISM/Readme.md)  |
 | Tue, Oct 03  |  [2] [HPC Hardware and Software] (S.C.)       |                                     |                      
 | Thu, Oct 05  |  [3] [Parallel Programming concepts] (S.C.) |                                     |
 | Fri, Oct 06  |                              |  [2] [Tutorial 2: exploring ORFEO](Intro/README.md)     |
@@ -78,7 +85,7 @@ Thomas Sterling Matthew Anderson Maciej Brodowicz eBook ISBN: 9780124202153 Pape
 Some of the materials of this book are presented during some lectures.
 
 ##### Ref 3: Introduction to High-Performance Scientific Computing,by Victor Eijkhout
-The source and pdf of the book (as well as lecture slides) can be found at this link: https://pages.tacc.utexas.edu/~eijkhout/istc/istc.html, DOI: 10.5281/zenodo.49897
+The source and pdf of the book (as well as lecture slides) can be found at this link: https:// https://theartofhpc.com//istc/istc.html, DOI: 10.5281/zenodo.49897
 
 Some of the materials presented in classes are taken from this book.
 
