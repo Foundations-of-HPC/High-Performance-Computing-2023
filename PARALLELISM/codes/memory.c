@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <assert.h>
 
 void callocator(double ** vec, size_t N)
 {
   *vec=(double *)calloc(N, sizeof(double));
-  if (*vec==NULL) fprintf(stderr, "vec is NULL\n");
+  assert(*vec != NULL);
 }
 
 int main(int argc, char **argv)
