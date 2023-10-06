@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name=compile_and_run_pi
+#SBATCH --time=0-00:10:00
+#SBATCH -p EPYC
+#SBATCH -n1 # 1 tasks
+#SBATCH --output=%x.%j.out
+#SBATCH --error=%x.%j.err
+#SBATCH -N1 # 1 NODES 
+echo Starting job $SLURM_JOB_ID
+echo Current dir is ${SLURM_SUBMIT_DIR}
+
+module purge
+module load compiler # For Intel compiler instead of GNU compiler
+cd ../codes
+echo "Now, I am in $(pwd)"
+icx pi.c -O3 -o pi.x
+./pi.x 100000000
+

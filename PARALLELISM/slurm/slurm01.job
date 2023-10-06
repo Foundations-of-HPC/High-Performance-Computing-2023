@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Name of the job
+#SBATCH --job-name=my_first_job
+
+# Define the number of nodes you need.
+#SBATCH --nodes=1
+
+# Define the number of tasks you need. Use with distributed parallelism
+#SBATCH --ntasks=16
+
+# Eventually, you can further specify the number of tasks per node
+#SBATCH --ntasks-per-node=16
+
+# Define the number of CPUs allocated to each task. Use with shared memory parallelism
+#SBATCH --cpus-per-task=2
+
+# Define how long the job will run in real time. Format is d-hh:mm:ss 
+# For a 30 seconds job 
+#SBATCH --time=0-00:00:30
+
+## Define the account name, e.g. for the Laboratory of Data Engineering 
+##SBATCH -A lade
+
+# Define the partition on which the job shall run, e.g. EPYC, THIN, GPU, DGX
+#SBATCH -p EPYC
+
+# Define how much memory you need. Choose one between the following 
+# --mem will define memory per node 
+# --mem-per-cpu will define memory per CPU/core
+#SBATCH --mem-per-cpu=1500MB
+##SBATCH --mem=5GB    # this one is not in effect, due to the double hash
+
+# Specify the output and error files
+#SBATCH --output=%x.%j.out 
+#SBATCH --error=%x.%j.err
+
+# Eventually, you can turn on mail notification.
+# Among the possibilities we can list: NONE, BEGIN, END, FAIL, ALL
+##SBATCH --mail-type=BEGIN,END
+##SBATCH --mail-user=fifo@lifo.com
+
+# Pick nodes with feature 'foo'. Different clusters have different features available.
+# Most of the time you don't need this
+##SBATCH -C foo
+
+# Restrict the job to run on the node(s) named
+##SBATCH -w epyc008
+
+#Start the program
+
+>&2 echo "DIR is ${SLURM_SUBMIT_DIR}"
+
+srun /bin/hostname
+srun sleep 60
+
