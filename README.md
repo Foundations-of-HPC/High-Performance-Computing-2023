@@ -53,9 +53,10 @@ First weeek of January is spare time if something has beeen left behind.
 | Wed, Sep 27  | [0] [Introduction to the course] (S.C. + L.T. + G.T) |           |
 | Thu, Sep 28  | [1] [Introduction to HPC](PARALLELISM/Readme.md) (S.C.)|          | 
 | Fri, Sep 29  |                  |   [1] [Tutorial 1: using the linux command line/ connecting to ORFEO](PARALLELISM/Readme.md)  |
-| Tue, Oct 03  |  [2] [HPC Hardware and Software] (S.C.)       |                                     |                      
-| Thu, Oct 05  |  [3] [Parallel Programming concepts] (S.C.) |                                     |
+| Tue, Oct 03  |  [2] [HPC Hardware] (S.C.)       |                                     |                      
+| Thu, Oct 05  |  [3] [HPC Software] (S.C.) |                                     |
 | Fri, Oct 06  |                              |  [2] [Tutorial 2: exploring ORFEO](Intro/README.md)     |
+| Mon, Oct 06  |  [3] [Parallel Programming concepts] (S.C.)                          |       |
 | Tue, Oct 10  |  [4] [Introduction to MPI / 1] (S.C.)|                                     |              
 | Thu, Oct 12  |  [5] [Introduction to MPI / 2] (S.C.)|                                     |
 | Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI ]    |
