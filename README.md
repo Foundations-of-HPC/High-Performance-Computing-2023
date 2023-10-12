@@ -59,7 +59,7 @@ First weeek of January is spare time if something has beeen left behind.
 | Mon, Oct 06  |  [3] [Parallel Programming concepts] (S.C.)                          |       |
 | Tue, Oct 10  |  [4] [Introduction to MPI / 1] (S.C.)|                                     |              
 | Thu, Oct 12  |  [5] [Introduction to MPI / 2] (S.C.)|                                     |
-| Fri, Oct 13  |                              |  [3] [Tutorial 3: MPI ]    |
+| Fri, Oct 13  |      [Introduction to Network]  (S.C.)                       |  [3] [Tutorial 3: MPI ]    |
 | Tue, Oct 17  |  [6] [Introduction to OpenMP / 1] (L.T.)  |                                     |     
 | Thu, Oct 19  |  [7] [Introduction to OpenMP / 2] (L.T.) |                                     |
 | Fri, Oct 20  |                              |  [4] [Tutorial 4: OpenMP]    |
