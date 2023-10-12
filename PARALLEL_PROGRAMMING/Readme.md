@@ -19,6 +19,5 @@ A collection of materials/references for the MPI lectures
     - [Another simple tutorial](https://mpitutorial.com/tutorials/) 
     - [A virtual course where I took a lot of materials, including some exercises](https://cvw.cac.cornell.edu/MPIP2P/)
  
-### tutorials  (contributed by Niccolo Tosato and Ruggero Lot)
-  - tutorial 1: [how to use modules on ORFEO (prepared by N.Tosato)](tutorial_module_system.md)
-  - tutorial 2: [compiling and running MPI program on ORFEO (prepared by N.Tosato)](compiling-and-running-mpi-programs.md)
+### tutorials  (contributed by Niccolo Tosato and Marco Celoria)
+  - tutorial 1: [compiling and running MPI program on ORFEO (prepared by N.Tosato)](compiling-and-running-mpi-programs.md)
