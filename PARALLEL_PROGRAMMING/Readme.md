@@ -21,4 +21,4 @@ A collection of materials/references for the MPI lectures
  
 ### tutorials  (contributed by Niccolo Tosato and Ruggero Lot)
   - tutorial 1: [how to use modules on ORFEO (prepared by N.Tosato)](tutorial_module_system.md)
-  - tutorial 2: [compiling and running MPI program on ORFEO (prepared by N.Tosato)](tutorial_mpi_hello_world.md)
+  - tutorial 2: [compiling and running MPI program on ORFEO (prepared by N.Tosato)](compiling-and-running-mpi-programs.md)
