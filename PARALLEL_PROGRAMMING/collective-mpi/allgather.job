@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+#SBATCH --job-name=allgather-example
+#SBATCH -p GPU
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+##SBATCH --gres=gpu:2
+#SBATCH --time=0:10:00
+#SBATCH -o allgather.%A.out
+#SBATCH -e allgather.%A.error
+##SBATCH -A lade
+#SBATCH --wait-all-nodes=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=10G 
+##SBATCH -w dgx002
+CURRENT_DIR=${SLURM_SUBMIT_DIR}
+head_node=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
+head_node_ip=$( srun  --nodes=1 --ntasks=1 -w "$head_node" --exclusive hostname --ip-address)
+echo "head_node=" ${head_node} " - head_node_ip=" $head_node_ip
+#export LOGLEVEL=INFO
+#export NCCL_DEBUG=INFO
+export OMP_NUM_THREADS=16
+cd ../..
+source myenv_v100/bin/activate
+cd -
+echo $(pwd)
+echo ${CUDA_VISIBLE_DEVICES}
+
+srun -l torchrun  \
+--nnodes 2 \
+--nproc_per_node 2 \
+--rdzv_id $RANDOM \
+--rdzv_backend c10d \
+--rdzv_endpoint $head_node_ip:29500 \
+allgather.py 
+
+

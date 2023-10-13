@@ -1,0 +1,42 @@
+#!/bin/bash
+#SBATCH --job-name=scaling          # Job name
+#SBATCH --nodes=1
+#SBATCH --ntasks=128                # Run a single task
+#SBATCH --time=01:20:00             # Time limit hrs:min:sec
+#SBATCH -p EPYC
+#SBATCH --output=%x.%j.out
+#SBATCH --error=%x.%j.err
+#SBATCH --exclusive
+module purge
+module load openMPI/4.1.5/gnu
+PI="../basic-mpi-codes/mpi_pi"
+mpicc -O3  ${PI}.c -o mpi_pi.x
+element="socket"
+N=1000000000
+echo "tasks, N, avg_walltime" > pi_strong.csv
+for i in $(eval echo {0..$SLURM_NTASKS..8}); 
+do
+    if [ "$i" -eq "0" ]
+    then
+	echo -n "1, $N," >> pi_strong.csv
+        mpirun --map-by ${element} -np 1  ./mpi_pi.x $N | grep "\[*\]" | awk 'BEGIN {FS=":"}; {print $2}' >> pi_strong.csv	
+    else
+        echo -n "$i, $N," >> pi_strong.csv
+        mpirun --map-by ${element} -np $i ./mpi_pi.x $N | grep "\[*\]" | awk 'BEGIN {FS=":"}; {print $2}' >> pi_strong.csv
+    fi
+done
+
+echo "tasks, N, avg_walltime" > pi_weak.csv
+for i in $(eval echo {0..$SLURM_NTASKS..8}); 
+do
+    if [ "$i" -eq "0" ] 
+    then
+        M=$N
+        echo -n "1, $M," >> pi_weak.csv
+        mpirun --map-by ${element} -np 1  ./mpi_pi.x $M | grep "\[*\]" | awk 'BEGIN {FS=":"}; {print $2}' >> pi_weak.csv 
+    else
+        M=$((${N}*${i}))
+        echo -n "$i, $M," >> pi_weak.csv
+        mpirun --map-by ${element} -np $i ./mpi_pi.x $M | grep "\[*\]" | awk 'BEGIN {FS=":"}; {print $2}' >> pi_weak.csv
+    fi
+done

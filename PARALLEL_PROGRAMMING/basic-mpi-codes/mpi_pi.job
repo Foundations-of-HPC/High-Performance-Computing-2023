@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH --job-name=pi_epyc
+#SBATCH --time=0-00:10:00
+#SBATCH -p EPYC
+#SBATCH -n128
+#SBATCH --output=%x.%j.out
+#SBATCH --error=%x.%j.err
+#SBATCH -N1 # 1 NODES 
+echo Starting job $SLURM_JOB_ID
+echo Current dir is ${SLURM_SUBMIT_DIR}
+
+module purge
+module load compiler
+module load intelMPI/2021.7.1
+mpiicc -cc=icx  mpi_hello_world.c      -g3 -o mpi_hello_world.x
+mpiicc -cc=icx  mpi_hello_world_sync.c -g3 -o mpi_hello_world_sync.x
+mpiifort mpi_hello_world.F90   -g3 -o mpi_hello_world_F.x
+mpiicc -cc=icx mpi_pi.c -O3 -g3 -o mpi_pi.x
+
+mpirun -np 12 ./mpi_pi.x 10000
