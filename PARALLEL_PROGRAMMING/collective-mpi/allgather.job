@@ -4,15 +4,12 @@
 #SBATCH -p GPU
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
-##SBATCH --gres=gpu:2
 #SBATCH --time=0:10:00
 #SBATCH -o allgather.%A.out
 #SBATCH -e allgather.%A.error
-##SBATCH -A lade
 #SBATCH --wait-all-nodes=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=10G 
-##SBATCH -w dgx002
 CURRENT_DIR=${SLURM_SUBMIT_DIR}
 head_node=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 head_node_ip=$( srun  --nodes=1 --ntasks=1 -w "$head_node" --exclusive hostname --ip-address)

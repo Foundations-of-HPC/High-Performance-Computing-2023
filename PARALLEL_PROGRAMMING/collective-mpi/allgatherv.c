@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
   MPI_Init(NULL, NULL);
   MPI_Comm_size(MPI_COMM_WORLD, &nproc);
   MPI_Comm_rank(MPI_COMM_WORLD, &myid);
-  srand(SEED*(myid+1)) ; // seed the number generator
+  srand(SEED*(myid+1)); // seed the number generator
   int numel = 1 + (rand() % 9);
   int totel;
   
@@ -40,6 +40,7 @@ int main(int argc, char** argv) {
       fprintf(stdout, "\n");
       fflush(stdout);
     }
+    sleep(0.01);
     MPI_Barrier(MPI_COMM_WORLD);
   }
   
@@ -56,6 +57,7 @@ int main(int argc, char** argv) {
       fprintf(stdout, "\n");
       fflush(stdout);
     }
+    sleep(0.01);
     MPI_Barrier(MPI_COMM_WORLD);
   }
   free(a);
