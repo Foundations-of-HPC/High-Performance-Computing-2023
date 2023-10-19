@@ -74,8 +74,8 @@ int main( int argc, char **argv )
 	      if ( string_ != NULL )
 		free( string_ );
 	    }
- 	                                     // if even that fails, just use 1 thread
-	}
+ 	                                     // if even that fails, just use the default value 1
+
     }
 
   if ( omp_get_dynamic( ) == 0 )
@@ -83,7 +83,7 @@ int main( int argc, char **argv )
       int max_allowed = omp_get_max_threads();
       if ( max_allowed != threads_num )
 	printf("\t>>> your OMP_DYNAMIC variable is set to FALSE\n"
-	       "\t    your omp could not adapt the number of threads in\n"
+	       "\t    your omp could not adapt the number of threads in"
 	       "\t    a parallel region to optimize the use of the system.\n"
 	       "\t    Still, you can adapt the number of threads by hands\n"
 	       "\t    in each parallel region by using \"omp_set_num_threads()\"\n"
@@ -94,7 +94,7 @@ int main( int argc, char **argv )
   omp_set_num_threads( threads_num );
 
   
-#pragma omp parallel               // this creates a parallel region
+ #pragma omp parallel              // this creates a parallel region
                                    // that is encompassed by the
                                    // opening and closing { }
                                    //
@@ -114,7 +114,8 @@ int main( int argc, char **argv )
   {   
     
     int my_thread_id = omp_get_thread_num();
-    #pragma omp master
+   #pragma omp master              // only the master thread is executing the
+				   // following line
     nthreads = omp_get_num_threads();
 
                                    // the order in which different threads will
