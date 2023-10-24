@@ -44,17 +44,36 @@
 int main ( int argc, char **argv )
 {
 
-  int N = ( (argc > 1) ? atoi(*(argv+1)) : N_DFLT);
+  int N   = ( (argc > 1) ? atoi(*(argv+1)) : N_DFLT);
+  int Nth = ( (argc > 2) ? atoi(*(argv+2)) : 0);
 
-  int *array = (int*)malloc( sizeof(int) * N );
+  unsigned int *array = (int*)malloc( sizeof(int) * N );
 
-  #pragma omp parallel
+  if ( Nth > 0 )
+    omp_set_num_threads = Nth;
+  
+ #pragma omp parallel
   {
-
-    for ( int i = 0; i < N; i++ )
+    int myid     = omp_get_thread_num();
+    int nthreads = omp_get_num_threads();
+    
+    for ( unsigned int i = 0; i < N; i++ )
       array[i] = i*i;
 
   }
+
+  //
+  // check the results
+  // can you parallelize this as well ?
+  //
+  
+  unsigned int faults = 0;
+  for ( unsigned int i = 0; i < N; i++ )
+    faults += ( array[i] != i*i );
+
+  if ( faults > 0 )
+    printf("wow, you've been able to get %u faults\n",
+	   faults );
   
   return 0;
 }
