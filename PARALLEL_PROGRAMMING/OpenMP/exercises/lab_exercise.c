@@ -38,8 +38,23 @@
 #include <omp.h>
 
 
+#define N_DFLT 1000
+
 
 int main ( int argc, char **argv )
 {
 
+  int N = ( (argc > 1) ? atoi(*(argv+1)) : N_DFLT);
+
+  int *array = (int*)malloc( sizeof(int) * N );
+
+  #pragma omp parallel
+  {
+
+    for ( int i = 0; i < N; i++ )
+      array[i] = i*i;
+
+  }
+  
+  return 0;
 }
