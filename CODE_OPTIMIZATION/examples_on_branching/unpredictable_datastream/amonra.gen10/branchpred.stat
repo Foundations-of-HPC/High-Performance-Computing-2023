@@ -1,0 +1,73 @@
+ Performance counter stats for './branchpred.O3 10000000' (10 runs):
+
+       5179.529701      task-clock:u (msec)       #    0.997 CPUs utilized            ( +-  5.78% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             1,707      page-faults:u             #    0.330 K/sec                    ( +-  8.98% )
+    14,292,771,909      cycles:u                  #    2.759 GHz                      ( +-  6.50% )
+    35,584,304,994      instructions:u            #    2.49  insn per cycle           ( +-  0.00% )
+     2,660,685,278      branches:u                #  513.692 M/sec                    ( +-  0.00% )
+           328,436      branch-misses:u           #    0.01% of all branches          ( +-  0.03% )
+
+       5.193898902 seconds time elapsed                                          ( +-  5.78% )
+
+=====================================================================================================
+
+Performance counter stats for './branchpred 10000000' (10 runs):
+
+       4449.648736      task-clock:u (msec)       #    0.997 CPUs utilized            ( +-  5.98% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             1,634      page-faults:u             #    0.367 K/sec                    ( +-  5.68% )
+    12,221,887,976      cycles:u                  #    2.747 GHz                      ( +-  6.79% )
+    14,334,305,164      instructions:u            #    1.17  insn per cycle           ( +-  0.00% )
+     1,410,684,467      branches:u                #  317.033 M/sec                    ( +-  0.00% )
+           328,051      branch-misses:u           #    0.02% of all branches          ( +-  0.01% )
+
+       4.461854575 seconds time elapsed                                          ( +-  5.98% )
+
+
+=====================================================================================================
+
+Performance counter stats for './branchpred.besmart 10000000' (10 runs):
+
+       5054.418566      task-clock:u (msec)       #    0.997 CPUs utilized            ( +-  6.49% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             1,400      page-faults:u             #    0.277 K/sec                    ( +- 16.73% )
+    14,289,249,919      cycles:u                  #    2.827 GHz                      ( +-  8.10% )
+    15,584,305,556      instructions:u            #    1.09  insn per cycle           ( +-  0.00% )
+     1,410,684,839      branches:u                #  279.099 M/sec                    ( +-  0.00% )
+           327,960      branch-misses:u           #    0.02% of all branches          ( +-  0.01% )
+
+       5.068390735 seconds time elapsed                                          ( +-  6.49% )
+
+=====================================================================================================
+
+Performance counter stats for './branchpred.besmart2 10000000' (10 runs):
+
+       4261.659769      task-clock:u (msec)       #    0.997 CPUs utilized            ( +-  5.32% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             1,470      page-faults:u             #    0.345 K/sec                    ( +- 10.46% )
+    11,678,571,859      cycles:u                  #    2.740 GHz                      ( +-  5.58% )
+    14,334,304,822      instructions:u            #    1.23  insn per cycle           ( +-  0.00% )
+     1,410,684,116      branches:u                #  331.018 M/sec                    ( +-  0.00% )
+           328,622      branch-misses:u           #    0.02% of all branches          ( +-  0.12% )
+
+       4.273532297 seconds time elapsed                                          ( +-  5.32% )
+
+=====================================================================================================
+
+ Performance counter stats for './branchpred.besmart2v 10000000' (10 runs):
+
+       2957.195515      task-clock:u (msec)       #    0.997 CPUs utilized            ( +-  5.34% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             1,190      page-faults:u             #    0.403 K/sec                    ( +-  8.58% )
+     7,876,823,137      cycles:u                  #    2.664 GHz                      ( +-  5.29% )
+     5,271,851,267      instructions:u            #    0.67  insn per cycle           ( +-  0.00% )
+       473,187,531      branches:u                #  160.012 M/sec                    ( +-  0.00% )
+           329,312      branch-misses:u           #    0.07% of all branches          ( +-  0.16% )
+
+       2.965742393 seconds time elapsed                                          ( +-  5.34% )

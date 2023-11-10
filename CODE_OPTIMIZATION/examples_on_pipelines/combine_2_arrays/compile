@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for f in v?.c;
+do
+    version=$( echo $f | cut -d'.' -f1 | cut -d'v' -f2)
+    echo "compiling "$version" -> v"$version
+    gcc -std=c11 -DUSE_PAPI -DPIPELINE=$version -o v$version pipeline.c -lm -lpapi
+    gcc -std=c11 -DUSE_PAPI -DPIPELINE=$version -o v$version.O3n pipeline.c -lm -lpapi -O3 -march=native -mavx2
+done
+
+echo "compiling vector"
+gcc -std=c11 -DUSE_PAPI -march=native -o vetor vector.c -lm -lpapi
+gcc -std=c11 -DUSE_PAPI -O3 -march=native -mavx2 -o vector.O3n vector.c -lm -lpapi

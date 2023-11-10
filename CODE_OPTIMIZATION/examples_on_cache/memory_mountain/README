@@ -1,0 +1,15 @@
+This directory contains code for generating a memory mountain, as
+described in Computer Systems: A Programmer's Perspective 
+
+clock.{c,h}	- routines for using x86 and Alpha cycle timers
+fcyc2.{c,h}	- routines that estimate the number of cycles required 
+                  by a function f that takes two arguments.
+Makefile	- memory mountain makefile
+mountain.c	- program that generates the memory mountain.
+
+(1) set the compiler at the top of Makefile
+(2) invoke make
+(3) execute the mountain.$COMPILER
+(4) copy the output in a file named mountain.dat
+(5) use plotmountain.gp to plot the data using gnuplot
+    type 'load "plotmountain.gp"' from inside gnuplot

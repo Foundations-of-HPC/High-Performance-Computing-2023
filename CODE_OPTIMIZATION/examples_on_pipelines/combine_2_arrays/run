@@ -1,0 +1,80 @@
+#!/bin/bash
+
+#./compile_all
+
+export LC_NUMERIC="en_US.UTF-8"    #that is to avoid problems with locales when using printf
+
+declare -a opts=("" ".O3n")
+declare -a opt_names=("no-opt" "opt")
+
+ntypes=${#types[@]}
+nopts=${#opts[@]}
+ncompilers=${#compilers[@]}
+
+# --------------------------------------------------
+# get results
+timings=()
+IPC=()
+
+execs=(v?)
+execs+=(vector)
+
+for f in ${execs[@]};
+do
+    version=$(echo $f | cut -f2 -d'v')    
+    printf "\trunning version v%s\n" $version
+    
+    for (( o=0; o<nopts; o++ ));
+    do
+	opt=${opts[$o]}
+	./$f${opts[$o]} > out
+
+	IPC+=($(cat out | grep IPC | cut -d':' -f2 ))
+	timings+=($(cat out | grep cycles-per-element | cut -d':' -f3 | cut -d']' -f1 ))	
+    done
+    rm -f out
+done
+
+
+# --------------------------------------------------
+# write results on the stdout
+
+# ............................
+# headers
+echo
+printf "%s\t" ""
+for (( o=0; o<nopts; o++ ));	   
+do
+    if [[ ${opts[$o]} == "" ]]; then printf "%11s\t" "plain"; else printf "%11s\t" ${opts[$o]}; fi
+done
+echo
+
+printf "%9s" ""
+for (( o=0; o<nopts; o++ ));	   
+do
+    printf "%4s%3s%4s\t" "CPE" "" "IPC"
+done
+
+echo
+echo
+
+# ............................
+# results
+idx=0
+
+if [[ ${exists[$c]} == 0 ]]; then continue; fi
+
+for f in ${execs[@]}
+do
+    printf "%-s\t " $f
+    for (( o=0; o<nopts; o++ ));	   
+    do	
+	printf "%4.2f%3s%4.2f\t" ${timings[$idx]} " " ${IPC[$idx]}
+	idx=$(($idx+1))
+    done
+    echo
+done
+
+
+
+	

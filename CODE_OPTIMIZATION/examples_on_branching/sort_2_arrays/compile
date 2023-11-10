@@ -1,0 +1,4 @@
+gcc -march=native -I/scratch/Software/include -DUSE_PAPI -o branchpred2 branchpred2.c -lm -L/scratch/Software/lib -lpapi
+gcc -march=native -DBESMART -I/scratch/Software/include -DUSE_PAPI -o branchpred2_smart branchpred2.c -lm -L/scratch/Software/lib -lpapi
+gcc -march=native -DBESMART2 -I/scratch/Software/include -DUSE_PAPI -o branchpred2_smart2 branchpred2.c -lm -L/scratch/Software/lib -lpapi
+gcc -march=native -DBESMART3 -I/scratch/Software/include -DUSE_PAPI -o branchpred2_smart3 branchpred2.c -lm -L/scratch/Software/lib -lpapi

@@ -1,0 +1,81 @@
+#!/bin/bash
+
+export LC_NUMERIC="en_US.UTF-8"
+export LC_LOCALE="en_US.UTF-8"
+
+exec=matmul
+
+declare -a outputs=("timings" "IPCs" "CPEs" "L1Ms")
+ndata=${#outputs[@]}
+
+declare -a optimizations=("Non-opt" "Opt")
+noptimizations=${#optimizations[@]}
+
+declare -a versions=("naive " "lpswap" "tailed")
+nversions=${#versions[@]}
+
+# --------------------------------------------
+#  SAVE THE OLD TABLES, IF PRESENT
+# --------------------------------------------
+
+for (( o=0 ; o < $ndata; o++ ));
+do
+    mv -f ${outputs[$o]} ${outputs[$o]}.back
+    echo -n "#    ">> ${outputs[$o]}
+    
+    for (( p=0; p < $noptimizations; p++ )); do
+	echo -e -n ${optimizations[$p]}"\t\t" >> ${outputs[$o]} ;
+    done
+    echo >> ${outputs[$o]}
+    
+    echo -n "#N  ">> ${outputs[$o]}
+    for (( p=0; p < $noptimizations; p++ )); do
+	for (( v=0; v < $nversions; v++ )); do	    
+	    echo -n ${versions[$v]}" " >> ${outputs[$o]}; done;
+    done
+    echo >> ${outputs[$o]}
+done
+
+# --------------------------------------------
+#  PREPARE OUTPUT FOLDER
+# --------------------------------------------
+
+output_dir=./output_saved
+if [ ! -d $output_dir ]; then mkdir $output_dir; fi
+
+# --------------------------------------------
+
+
+start=100
+stop=3000
+inc=100
+
+
+
+
+echo -n "running.. "
+for (( N=$start; N<=$stop; N+=$inc ));
+do
+    echo -n "N="$N".. "
+    for (( V=0; V<$nversions; V++ ));
+    do
+	taskset -c 2 ./$exec $V $N $N $N > ${output_dir}/output.${V}.${N}
+	results+=($(cat ${output_dir}/output.${V}.${N} | gawk '{ if($1=="elapsed") time=$3; else if($1=="IPC:") IPC=$2; else if($1=="cycles-per-element:") CPE=$2; else if($1=="L1miss-per-element:") L1M=$2} END {print time, IPC, CPE,L1M}'))
+
+	taskset -c 2 ./${exec}.On $V $N $N $N > ${output_dir}/output.O.${V}.${N}
+	resultsO+=($(cat ${output_dir}/output.O.${V}.${N} | gawk '{ if($1=="elapsed") time=$3; else if($1=="IPC:") IPC=$2; else if($1=="cycles-per-element:") CPE=$2; else if($1=="L1miss-per-element:") L1M=$2} END {print time, IPC, CPE,L1M}'))
+
+    done
+
+    for (( o=0 ; o < ${#outputs[@]}; o++ ));
+    do
+	echo -n $N" " >> ${outputs[$o]}
+	for (( c=0; c<$nversions; c++ )); do echo -n ${results[$(($c*$ndata+$o))]}" " >> ${outputs[$o]}; done
+	for (( c=0; c<$nversions; c++ )); do echo -n ${resultsO[$(($c*$ndata+$o))]}" " >> ${outputs[$o]}; done
+	echo >> ${outputs[$o]}
+    done
+    
+    results=()
+    resultsO=()
+done
+echo
