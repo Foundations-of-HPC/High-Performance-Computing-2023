@@ -33,12 +33,13 @@ The exercise does not require any programming effort: students are supposed to u
 ## Steps to be performed:
 
  - download and install the OSU benchmark available at this page: https://mvapich.cse.ohio-state.edu/benchmarks/
- - select the blocking MPI collective operation you want to test among one of the following five listed below.
  - select a whole computational node, i.e. an epyc one
- - run several repetions of the programs and collect performance number, estimating the error, without specifiyng any particular algorithm.
- - repeat the previuos step using at least two different algorithms.
- - collect and compare numbers and try to understand/infer the performance model behind the algorithms you selected.\
- - report your result in a nice report.
+ - select an additional tblocking MPI collective operation you want to test among one of the following five listed below.
+ - familiarize with the `osu_bcast` and the additional collective operation you choose: run several repetions of the programs and collect performance number, estimating the error in order to have a baseline for the operation 
+ - select for the two collective operation (bcast, mandatory for all, and the one you selected) at most three possible algorithms and perform the same set of measurements of the previous step.
+ - collect and compare numbers among the baseline and the algorithms you choose.
+ - try to understand/infer the performance model behind the algorithms you selected.\
+ - report your result in a nice report and prepare a short presentation (no more that 10 slides)
    
 ## how to selet the openMPI algorithms available
 
