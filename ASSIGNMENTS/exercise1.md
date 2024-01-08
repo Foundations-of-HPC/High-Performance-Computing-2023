@@ -27,8 +27,13 @@ The report should clearly explain which software stack we should use to compile 
 
 ## Introduction
 
-The openMPI libraries implements several algorithms to implement collective operations accordingly to many different parameters. The exercise consists in testing some of them  for a selected operation ( like for instance broadcast operation)  to estimate the latency and the bandwith of the selected operation.
-The exercise does not require any programming effort: students are supposed to use a well known MPI benchmark: the  OSUone and they are supposed to run them on a single node of the cluster, choosing among epyc, thin and fat, using all the available cores.
+The openMPI libraries implements several algorithms to perform collective operations accordingly to many different parameters. The exercise consists in evalutation some of them  for two different collective operations:
+  - broadcast operation: mandatory for all
+  - a collective operation at your choiche among the following four: gather, scatter, barrier, reduce
+
+You are supposed to estimate the latency of default openMPI implementation, variyng the number of processes and the size of the messages exchanged and then compare this latter with the values you obtain using different algorithms. 
+The exercise does not require any programming effort: students are supposed to use a well known MPI benchmark: the  OSUone and they are supposed to run them on at least two nodes of the ORFEO cluster, choosing among epyc, thin and fat, using all the available cores on a single node.
+
 
 ## Steps to be performed:
 
