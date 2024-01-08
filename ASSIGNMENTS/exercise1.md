@@ -29,7 +29,7 @@ The report should clearly explain which software stack we should use to compile 
 
 The openMPI libraries implements several algorithms to perform collective operations accordingly to many different parameters. The exercise consists in evalutation some of them  for two different collective operations:
   - broadcast operation: mandatory for all
-  - a collective operation at your choiche among the following four: gather, scatter, barrier, reduce
+  - a collective operation at your choice among the following four: gather, scatter, barrier, reduce
 
 You are supposed to estimate the latency of default openMPI implementation, variyng the number of processes and the size of the messages exchanged and then compare this latter with the values you obtain using different algorithms. 
 The exercise does not require any programming effort: students are supposed to use a well known MPI benchmark: the  OSUone and they are supposed to run them on at least two nodes of the ORFEO cluster, choosing among epyc, thin and fat, using all the available cores on a single node.
@@ -38,18 +38,18 @@ The exercise does not require any programming effort: students are supposed to u
 ## Steps to be performed:
 
  - download and install the OSU benchmark available at this page: https://mvapich.cse.ohio-state.edu/benchmarks/
- - select a whole computational node, i.e. an epyc one
- - select an additional tblocking MPI collective operation you want to test among one of the following five listed below.
- - familiarize with the `osu_bcast` and the additional collective operation you choose: run several repetions of the programs and collect performance number, estimating the error in order to have a baseline for the operation 
+ - select a two whole computational node, i.e. two  epyc nodes
+ - select an additional tblocking MPI collective operation you want to test among one of the following four listed above.
+ - familiarize with the `osu_bcast` and the additional collective operation you choose: run several repetions of the programs and collect performance number, estimating the error in order to have a baseline for the two operations. 
  - select for the two collective operation (bcast, mandatory for all, and the one you selected) at most three possible algorithms and perform the same set of measurements of the previous step.
  - collect and compare numbers among the baseline and the algorithms you choose.
- - try to understand/infer the performance model behind the algorithms you selected.\
+ - try to understand/infer the performance model behind the algorithms you selected.
  - report your result in a nice report and prepare a short presentation (no more that 10 slides)
    
-## how to selet the openMPI algorithms available
+## how to select the openMPI algorithms available
 
-By means of the 'oompi_info' we can see the detailed information about the openMPI implmentation we have on ORFEO cluster:
-We focus here only on the  MCA coll tuned set of parameters: and we report the most important parameter accordingly to most important collective operations
+Open MPI architecture is based on software components, plugged into the library kernel. A component provides functionality with specific implementation features. For instance, a collective component known as *Tuned* implements different algorithms for each collective operation defined in MPI as a sequence of point-to-point transmissions between the involved processes.
+By means of the 'oompi_info' we can see the detailed information about the openMPI implementation and parameter that one can choose in order to select different algorithms. In the following we report the parameter you neeed to choose to select different algorithms for the following collective operations:
 
   - barrier
   - broadcast
@@ -57,9 +57,9 @@ We focus here only on the  MCA coll tuned set of parameters: and we report the m
   - gather
   - scatter 
 
-by means of the parameter listed below we are able to select different algorithms. In order to do this the following parameter is always needed: 
+In order to enable this choice the following parameter must be specify: 
   
-          
+        
           MCA coll tuned: parameter "coll_tuned_use_dynamic_rules" (current
                           value: "false", data source: default, level: 6
                           tuner/all, type: bool)
@@ -69,7 +69,7 @@ by means of the parameter listed below we are able to select different algorithm
                           Valid values: 0: f|false|disabled|no|n, 1:
                           t|true|enabled|yes|y
 
- The parameters for the five operation we focus on are the following.
+The parameters for the five operation we focus on are the following.
  
 - barrier algorithms: 
 
@@ -118,12 +118,7 @@ by means of the parameter listed below we are able to select different algorithm
                           6:"in-order_binary", 7:"rabenseifner"
                           
 -gather algorithms:
-
          
-          MCA coll tuned: informational "coll_tuned_gather_algorithm_count"
-                          (current value: "4", data source: default, level: 5
-                          tuner/detail, type: int)
-                          Number of gather algorithms available
           MCA coll tuned: parameter "coll_tuned_gather_algorithm" (current
                           value: "ignore", data source: default, level: 5
                           tuner/detail, type: int)
@@ -135,7 +130,6 @@ by means of the parameter listed below we are able to select different algorithm
                           2:"binomial", 3:"linear_sync"
                           
 -scatter algorithms: 
-
           
           MCA coll tuned: parameter "coll_tuned_scatter_algorithm" (current
                           value: "ignore", data source: default, level: 5
@@ -149,7 +143,7 @@ by means of the parameter listed below we are able to select different algorithm
 
 
 
-We provide here an example: to select different algorithms for a specific operation (i.e. bcast) one should issue the following command:
+We provide here an example how to select different algorithms for a specific operation (i.e. bcast) one should issue the following command:
 
     mpirun  --mca coll_tuned_use_dynamic_rules true --mca coll_tuned_bcast_algorithm 0 osu_bcast
 
@@ -216,6 +210,18 @@ The program gives the latency on 128 processor with the default algorithm choose
 
 as one can notice the difference is remarkable.
 
+## Details on broadcast algorithms
+
+Reference 1 below reported discusses in details a few algorithms implemented in the openMPI MPI_Bcast routine; we report here a full section of the paper to help understanding better the way they  work and to infer a possible performance model for each of them.
+
+In the broadcast operation (MPI_Bcast) a process called root sends a message with the same data to all processes in the communicator. Messages can be segmented in transmissions. Segmentation of messages is a common technique used for increasing the communication parallelism by avoiding the rendezvous protocol, and hence, improving the performance. It consists of dividing up the message into smaller fragments called segments and sending them in sequence.
+
+Every algorithm implementing the broadcast in the *Tuned* component defines a communication graph with a specific topology between the P ranks in the communicator. Ranks are the nodes in the graph, and they are mapped to the processes of the parallel machine. The features and topology of the broadcast algorithms implemented in Open MPI Tuned component are listed below:
+
+- *Flat tree algorithm*. The algorithm employs a single level tree topology shown in Fig. 3a where the root node has P-1 
+ children. The message is transmitted to child nodes without segmentation.
+
+- *Chain tree algorithm*. Each internal node in the topology has one child (see Fig. 3b). The message is split into segments and transmission of segments continues in a pipeline until the last node gets the broadcast message. ith process receives the message from the (i-1)th process, and sends it to (i+1)th process.
 
 
 
