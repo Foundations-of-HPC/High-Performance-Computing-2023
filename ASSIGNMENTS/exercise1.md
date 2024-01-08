@@ -223,5 +223,16 @@ Every algorithm implementing the broadcast in the *Tuned* component defines a co
 
 - *Chain tree algorithm*. Each internal node in the topology has one child (see Fig. 3b). The message is split into segments and transmission of segments continues in a pipeline until the last node gets the broadcast message. ith process receives the message from the (i-1)th process, and sends it to (i+1)th process.
 
+- *Binary tree algorithm*. Unlike the chain tree, each internal process has two children, and hence data is transmitted from each node to both children (Fig. 3c). Segmentation technique is employed in this algorithm. For simplicity we assume that the binary tree is complete, then  P=2powered to H -1 where H is the height of the tree, i.e H=log(P-1) 
+
+- *Split binary tree algorithm*. The split binary tree algorithm employs the same virtual topology as the binary tree (Fig. 3c). As the name implies, the difference from the binary tree algorithm is that the message is split into two halves before transmission. After splitting the message, the right and left halves of the message are pushed down into the right and left sub-trees respectively. In an additional last phase, the left and right nodes exchange in pairs their halves of the message to complete the broadcast operation.
+
+- *K-Chain tree algorithm*. The K-Chain virtual topology is employed in the algorithm (Fig. 3d). The root broadcasts the message using segmentation to the child processes, and then the child processes broadcast the message to their children in parallel. As the name implies, the virtual topology consists of K chain tree virtual topology each of which is connected to root. The height of K-chain tree is estimated as H = (P-1)/K . Last process must wait for H(k-chain) steps until it gets the broadcast message.
+
+- *Binomial tree algorithm*. The binomial tree topology is determined according to the binomial tree definition [20]. The algorithm employs balanced binomial tree (Fig. 3e). Unlike the binary tree, the maximum nodal degree of the binomial tree decreases from the root down to the leaves as follows: logP, logP -1, logP -2 ....   The height of the binomial tree is the order of the tree:H=logP 
+
+
+
+
 
 
