@@ -21,8 +21,8 @@ Version `1.0`: this document can be modified several times in the next few days 
 You should send us the e-mail at least one week before the exam.
 For the first two  scheduled "appelli" this means:
 
- - exam scheduled at xx.02.2024 ***deadline xx.02.2023 at midnight*** 
- - exam scheduled at xx.02.2024  ***deadline xx.02.2023 at midnight***
+ - exam scheduled at 06.02.2024 ***deadline 01.02.2023 at midnight*** 
+ - exam scheduled at 27.02.2024  ***deadline 22.02.2023 at midnight***
 
 The report should clearly explain which software stack we should use to compile the codes and run all the programs you used in your exercises. Providing well-done Makefiles/scripts to automatize the work is highly appreciated.
 
