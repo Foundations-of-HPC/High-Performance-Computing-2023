@@ -60,7 +60,7 @@ The report that you have to attach to the email must
 
 # Exercise 2a
 
-### **Implement a broadcast algorithm or a all-to-all algorithm (you choose either one), both in distributed memory and in shared memory.**
+### **Implement a broadcast algorithm or a all-to-all algorithm (you choose either one) in distributed memory.**
 
 Implementing the algorithm in distributed memory means that you write an MPI code that _using point-to-point calls only_ implements either a broadcast (from any single process to all the other processes) or an all-to-all collective call among MPI processes.
 
