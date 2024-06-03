@@ -1,6 +1,16 @@
 # High Performance Computing 2023
 Lecture slides, codes and materials for the 6-credit course on High Performance Computing.
 
+##  NEWS NEWS ## 
+
+## Summer Session Exams for the 2023 HPC course ## 
+
+**EXAMs will be on 9th and 10th of July building A  room 102  Padriciano Campus** 
+
+**Students should send us the exercise one week before : on the 4th of July by 23:59** 
+
+## NEWS NEWS ##
+
 
 #### Teachers 
 
